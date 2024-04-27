@@ -9,7 +9,7 @@ class StreamSource {
     static Stream<BigInteger> getFibonacciNumbers() {
         return Stream.iterate(new BigInteger[]{BigInteger.ZERO, BigInteger.ONE},
                         arr -> new BigInteger[]{arr[1], arr[0].add(arr[1])})
-                .flatMap(arr -> Stream.of(arr[0]));
+                .flatMap(arr -> Stream.of(arr[0], arr[1]));
     }
 
     static Stream<BigInteger> getTriangularNumbers() {
